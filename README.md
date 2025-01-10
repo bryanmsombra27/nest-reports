@@ -24,8 +24,26 @@
 
 ## Levantar servidor de nest
 
-1. Montar la DB utilizando imagen de docker (para desarrollo)
+1. Instalar dependencias del proyecto
+
+```bash
+npm install
+```
+
+2. Montar la DB utilizando imagen de docker (para desarrollo)
 
 ```bash
  docker compose up -d
+```
+
+3. Generar Prisma Client
+
+```bash
+npx prisma generate
+```
+
+4. Levantar el proyecto en desarrollo
+
+```bash
+npm run dev
 ```
