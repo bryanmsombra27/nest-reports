@@ -3,6 +3,7 @@ import { PrismaClient } from '@prisma/client';
 import { TDocumentDefinitions } from 'pdfmake/interfaces';
 import { PrinterService } from 'src/printer/printer.service';
 import {
+  getCountriesReport,
   getEmploymentLetter,
   getEmploymentLetterById,
   helloWorldReport,
@@ -50,6 +51,24 @@ export class BasicReportsService extends PrismaClient implements OnModuleInit {
       employerCompany: 'Tucan Code Corp',
       employerPosition: ' Gerente RH',
     });
+    const pdf = this.printerService.createPdf(docDefinition);
+
+    return pdf;
+  }
+
+  async getCountries() {
+    const countries = await this.countries.findMany({
+      where: {
+        local_name: {
+          not: null,
+        },
+      },
+    });
+
+    const docDefinition = getCountriesReport({
+      data: countries,
+    });
+
     const pdf = this.printerService.createPdf(docDefinition);
 
     return pdf;

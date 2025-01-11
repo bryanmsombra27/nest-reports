@@ -47,3 +47,17 @@ npx prisma generate
 ```bash
 npm run dev
 ```
+
+comandos de prisma
+
+comando para checar como se encuentra la db y generar los eschemas
+
+```bash
+npx prisma db pull
+
+```
+
+```bash
+npx prisma generate
+
+```

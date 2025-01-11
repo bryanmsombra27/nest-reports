@@ -46,4 +46,16 @@ export class BasicReportsController {
     pdf.pipe(res);
     pdf.end();
   }
+
+  @Get('countries')
+  async getCountriesReport(@Res() res: Response) {
+    const pdf = await this.basicReportsService.getCountries();
+
+    // SETEAR EL HEADER PARA EL TIPO DE RESPUESTA
+    res.setHeader('Content-Type', 'application/pdf');
+
+    pdf.info.Title = 'Countries';
+    pdf.pipe(res);
+    pdf.end();
+  }
 }
