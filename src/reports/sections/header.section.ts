@@ -20,6 +20,7 @@ const date: Content = {
   alignment: 'right',
   margin: [20, 30],
   width: 150,
+  fontSize: 10,
 };
 
 export const headerSection = (opt: HeaderOptions): Content => {
