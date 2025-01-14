@@ -41,6 +41,14 @@ const customTableLayouts: Record<string, CustomTableLayout> = {
       return i % 2 == 0 ? '#f3f3f3' : '#fff';
     },
   },
+  borderBlue: {
+    hLineColor: function (i, node) {
+      return '#5f96d4';
+    },
+    vLineColor: function (i, node) {
+      return '#5f96d4';
+    },
+  },
 };
 
 @Injectable()
